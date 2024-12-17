@@ -387,5 +387,5 @@ app.get('*', (req, res) => {
     res.sendFile(path.resolve(dirname, "frontend", "build", "index.html"));
 })
 
-app.listen(4800);
+app.listen(process.env.PORT);
 
