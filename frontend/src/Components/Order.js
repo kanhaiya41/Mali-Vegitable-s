@@ -35,7 +35,7 @@ const Order = () => {
   //Get the Vegitables
   const [VegData, setVegData] = useState([]);
   const GetVegData = async () => {
-    const res = await axios.get('http://localhost:4800/Vegitable');
+    const res = await axios.get('https://mali-vegitable-s-3.onrender.com/Vegitable');
     setVegData(res?.data);
   }
   useEffect(() => {
@@ -71,7 +71,7 @@ const Order = () => {
       toast.error('Password Does not match');
     }
     else {
-      const res = await axios.post('http://localhost:4800/SignUser', Sign);
+      const res = await axios.post('https://mali-vegitable-s-3.onrender.com/SignUser', Sign);
       toast.success(res?.data);
       setLogin(true);
       dispatch(setUser({
@@ -119,7 +119,7 @@ const Order = () => {
   const LogUser = async () => {
     var un = document.getElementById('UName').value;
     var psrd = document.getElementById('pswrd').value;
-    const res = await axios.get('http://localhost:4800/Login');
+    const res = await axios.get('https://mali-vegitable-s-3.onrender.com/Login');
     setUserData(res?.data);
     for (let i = 0; i < UserData.length; i++) {
       const CurElem = UserData[i];
@@ -219,7 +219,7 @@ const Order = () => {
       Address: bigDetail?.Address,
       Bill: payment
     }
-    const res = await axios.post('http://localhost:4800/BigOrder', fulldetailBigOrder);
+    const res = await axios.post('https://mali-vegitable-s-3.onrender.com/BigOrder', fulldetailBigOrder);
     toast.success(res?.data);
     BigOrderDetail();
   }

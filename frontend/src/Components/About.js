@@ -37,7 +37,7 @@ const About = () => {
     e.preventDefault();
     const UserName = AdminDetail.AUserName;
     const Password = AdminDetail.APassword;
-    const res = await axios.get(`http://localhost:4800/AdminLogin/${UserName}`);
+    const res = await axios.get(`https://mali-vegitable-s-3.onrender.com/AdminLogin/${UserName}`);
 
     const Result = res.data;
     if (Result && Result.UserName === UserName) {
@@ -84,7 +84,7 @@ const About = () => {
     const UserName = EmployeeDetail.EUserName;
     const Password = EmployeeDetail.EPassword;
     const Code = EmployeeDetail.ECode;
-    const res = await axios.get(`http://localhost:4800/EmployeeLogin/${UserName}`);
+    const res = await axios.get(`https://mali-vegitable-s-3.onrender.com/EmployeeLogin/${UserName}`);
     const Result = res?.data;
     if (Result && Result.UserName === UserName) {
       if (Result.Password === Password) {

@@ -13,11 +13,11 @@ const Confirm = () => {
   const GetData = async () => {
     try {
       if (!big) {
-        const res = await axios.get(`http://localhost:4800/GetSingleOrder/${id}`);
+        const res = await axios.get(`https://mali-vegitable-s-3.onrender.com/GetSingleOrder/${id}`);
         setEmployeeData(res.data);
       }
       else {
-        const res = await axios.get(`http://localhost:4800/GetSingleBigOrder/${id}`);
+        const res = await axios.get(`https://mali-vegitable-s-3.onrender.com/GetSingleBigOrder/${id}`);
         setEmployeeData(res.data);
       }
     } catch (error) {
@@ -33,10 +33,10 @@ const Confirm = () => {
     if (message === Code) {
       toast.success("done");
       if (!big) {
-        const res = await axios.post('http://localhost:4800/CompleteWorkNow', EmployeeData);
+        const res = await axios.post('https://mali-vegitable-s-3.onrender.com/CompleteWorkNow', EmployeeData);
       }
       else {
-        const res = await axios.post('http://localhost:4800/CompleteBidWorkNow', EmployeeData);
+        const res = await axios.post('https://mali-vegitable-s-3.onrender.com/CompleteBidWorkNow', EmployeeData);
       }
     }
     else {

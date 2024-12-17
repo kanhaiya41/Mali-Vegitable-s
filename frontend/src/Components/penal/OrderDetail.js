@@ -10,7 +10,7 @@ const OrderDetails = () => {
   const [EmployeeData, setEmployeeData] = useState({});
   const GetData = async () => {
     try {
-      const res = await axios.get(`http://localhost:4800/GetSingleOrder/${id}`);
+      const res = await axios.get(`https://mali-vegitable-s-3.onrender.com/GetSingleOrder/${id}`);
       setEmployeeData(res.data);
     } catch (error) {
       console.error("Error fetching data:", error);

@@ -7,7 +7,7 @@ const WorkAssign = () => {
     //Get the Orders
   const [Orders,setOrders]=useState([]);
   const GetOrderData=async()=>{
-    const res=await axios.get('http://localhost:4800/Order');
+    const res=await axios.get('https://mali-vegitable-s-3.onrender.com/Order');
     setOrders(res.data);
   };
 
@@ -20,7 +20,7 @@ const WorkAssign = () => {
     const [EmployeeData,setEmployeeData]=useState({});
   const GetData = async () => {
     try {
-      const res = await axios.get(`http://localhost:4800/GetSingleEmloyee/${id}`);
+      const res = await axios.get(`https://mali-vegitable-s-3.onrender.com/GetSingleEmloyee/${id}`);
       setEmployeeData(res.data);
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -53,7 +53,7 @@ const WorkAssign = () => {
   
   const AssignNow=async()=>{
     try {
-      const res = await axios.post('http://localhost:4800/FindforAssign', {
+      const res = await axios.post('https://mali-vegitable-s-3.onrender.com/FindforAssign', {
         ids: idDats
       });
       const workDataArray = res.data;
@@ -75,7 +75,7 @@ const WorkAssign = () => {
       // Debugging: Check the new AssignWork structure
       console.log('AssignWork Data:', assignWorkArray);
 
-      const response = await axios.post('http://localhost:4800/AssignWorkNow', assignWorkArray);
+      const response = await axios.post('https://mali-vegitable-s-3.onrender.com/AssignWorkNow', assignWorkArray);
       toast.success(`Assign to ${EmployeeData?.UserName}`);
 
     } catch (error) {

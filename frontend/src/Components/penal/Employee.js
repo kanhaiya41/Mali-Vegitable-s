@@ -11,20 +11,20 @@ const Employee = () => {
   //Get the Vegitables
   const [VegData, setVegData] = useState([]);
   const GetVegData = async () => {
-    const res = await axios.get('http://localhost:4800/Vegitable');
+    const res = await axios.get('https://mali-vegitable-s-3.onrender.com/Vegitable');
     setVegData(res?.data);
   }
   const [EmployeeData, setEmployeeData] = useState([]);
   const GetEmployeeWork = async () => {
     const Employee = user?.UserName;
-    const res = await axios.get(`http://localhost:4800/FindAssignOrdersForSignleEmployee/${Employee}`);
+    const res = await axios.get(`https://mali-vegitable-s-3.onrender.com/FindAssignOrdersForSignleEmployee/${Employee}`);
     setEmployeeData(res?.data);
   }
   // Fing Big Orders Assigned
   const [EmployeeBigData, setEmployeeBigData] = useState([]);
   const GetEmployeeBigWork = async () => {
     const Employee = user?.UserName;
-    const res = await axios.get(`http://localhost:4800/FindAssignBigOrdersForSignleEmployee/${Employee}`);
+    const res = await axios.get(`https://mali-vegitable-s-3.onrender.com/FindAssignBigOrdersForSignleEmployee/${Employee}`);
     setEmployeeBigData(res?.data);
   }
   useEffect(() => {
@@ -59,14 +59,14 @@ const Employee = () => {
       to: `+91${Number}`,
       message: OTP
     };
-    const res = await axios.post('http://localhost:4800/send-OTP', otpDetails);
+    const res = await axios.post('https://mali-vegitable-s-3.onrender.com/send-OTP', otpDetails);
     const message = otpDetails.message;
     Navigate('/Confirm', { state: { id, message, big: false } });
   }
   const [CompletedWork, setCompletedWork] = useState([]);
   const GetCompletedWork = async () => {
     const Employee = user?.UserName;
-    const res = await axios.get(`http://localhost:4800/FindCompletedOrdersForSignleEmployee/${Employee}`);
+    const res = await axios.get(`https://mali-vegitable-s-3.onrender.com/FindCompletedOrdersForSignleEmployee/${Employee}`);
 
     setCompletedWork(res?.data);
   }
@@ -81,14 +81,14 @@ const Employee = () => {
       to: `+91${Number}`,
       message: OTP
     };
-    const res = await axios.post('http://localhost:4800/send-OTP', otpDetails);
+    const res = await axios.post('https://mali-vegitable-s-3.onrender.com/send-OTP', otpDetails);
     const message = otpDetails.message;
     Navigate('/Confirm', { state: { id, message, big: true } });
   }
   const [CompletedBigWork, setCompletedBigWork] = useState([]);
   const GetCompletedBigWork = async () => {
     const Employee = user?.UserName;
-    const res = await axios.get(`http://localhost:4800/FindCompletedBigOrdersForSignleEmployee/${Employee}`);
+    const res = await axios.get(`https://mali-vegitable-s-3.onrender.com/FindCompletedBigOrdersForSignleEmployee/${Employee}`);
     setCompletedBigWork(res?.data);
   }
   // For Total Export Ammount

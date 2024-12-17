@@ -22,7 +22,7 @@ const Admin = () => {
   }
   const AddVegitable = async (e) => {
     e.preventDefault();
-    const res = await axios.post('http://localhost:4800/Admin', Vagitable);
+    const res = await axios.post('https://mali-vegitable-s-3.onrender.com/Admin', Vagitable);
     setVegitable({
       item: "",
       quantity: '',
@@ -34,30 +34,30 @@ const Admin = () => {
   //Get the Vegitables
   const [VegData, setVegData] = useState([]);
   const GetVegData = async () => {
-    const res = await axios.get('http://localhost:4800/Vegitable');
+    const res = await axios.get('https://mali-vegitable-s-3.onrender.com/Vegitable');
     setVegData(res?.data);
   }
   //Get the Orders
   const [Orders, setOrders] = useState([]);
   const GetOrderData = async () => {
-    const res = await axios.get('http://localhost:4800/Order');
+    const res = await axios.get('https://mali-vegitable-s-3.onrender.com/Order');
     setOrders(res?.data);
   }
   //Get the Assign Orders
   const [AssignOrders, setAssignOrders] = useState([]);
   const GetAssignOrderData = async () => {
-    const res = await axios.get('http://localhost:4800/FindAssignedOrder');
+    const res = await axios.get('https://mali-vegitable-s-3.onrender.com/FindAssignedOrder');
     setAssignOrders(res?.data);
   }
   const [User, setUser] = useState([]);
   const GetUser = async () => {
-    const res = await axios.get('http://localhost:4800/Login');
+    const res = await axios.get('https://mali-vegitable-s-3.onrender.com/Login');
     setUser(res?.data);
   }
   //For Completed Orders
   const [CompletedWork, setCompletedWork] = useState([]);
   const GetCompletedWork = async () => {
-    const res = await axios.get('http://localhost:4800/FindCompletedOrder');
+    const res = await axios.get('https://mali-vegitable-s-3.onrender.com/FindCompletedOrder');
     setCompletedWork(res?.data);
   }
   useEffect(() => {
@@ -90,7 +90,7 @@ const Admin = () => {
   }
   const UpdateNow = async () => {
     const id = IdForUpdate;
-    const res = await axios.put(`http://localhost:4800/UpdateVegNow/${id}`, Vagitable);
+    const res = await axios.put(`https://mali-vegitable-s-3.onrender.com/UpdateVegNow/${id}`, Vagitable);
     toast.success(res?.data);
     setVegitable({
       item: "",
@@ -101,7 +101,7 @@ const Admin = () => {
   }
   // for delete
   const DeleteNow = async (id) => {
-    const res = await axios.delete(`http://localhost:4800/DeleteVegNow/${id}`);
+    const res = await axios.delete(`https://mali-vegitable-s-3.onrender.com/DeleteVegNow/${id}`);
   }
   return (
     <>

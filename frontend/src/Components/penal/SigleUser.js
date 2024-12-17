@@ -9,7 +9,7 @@ const SigleUser = () => {
     const [EmployeeData,setEmployeeData]=useState({});
   const GetData = async () => {
     try {
-      const res = await axios.get(`http://localhost:4800/GetSingleUser/${id}`);
+      const res = await axios.get(`https://mali-vegitable-s-3.onrender.com/GetSingleUser/${id}`);
       setEmployeeData(res.data);
     } catch (error) {
       console.error("Error fetching data:", error);

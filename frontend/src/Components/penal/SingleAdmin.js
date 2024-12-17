@@ -9,7 +9,7 @@ const SingleAdmin = () => {
     const [EmployeeData,setEmployeeData]=useState({});
   const GetData = async () => {
     try {
-      const res = await axios.get(`http://localhost:4800/GetSingleEmloyee/${id}`);
+      const res = await axios.get(`https://mali-vegitable-s-3.onrender.com/GetSingleEmloyee/${id}`);
       setEmployeeData(res.data);
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -26,7 +26,7 @@ const SingleAdmin = () => {
     {
       aoc.style.display='block';
       const Employee=EmployeeData.UserName;
-    const res=await axios.get(`http://localhost:4800/FindAssignOrdersForSignleEmployee/${Employee}`);
+    const res=await axios.get(`https://mali-vegitable-s-3.onrender.com/FindAssignOrdersForSignleEmployee/${Employee}`);
     setAssignOrders(res.data);
     }
     else
@@ -42,7 +42,7 @@ const SingleAdmin = () => {
     {
       aoc.style.display='block';
       const Employee=EmployeeData.UserName;
-    const res=await axios.get(`http://localhost:4800/FindCompletedOrdersForSignleEmployee/${Employee}`);
+    const res=await axios.get(`https://mali-vegitable-s-3.onrender.com/FindCompletedOrdersForSignleEmployee/${Employee}`);
     setCompletedOrders(res.data);
     }
     else

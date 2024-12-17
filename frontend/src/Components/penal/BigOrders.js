@@ -3,17 +3,17 @@ import axios from 'axios';
 const BigOrders = () => {
     const [BigOrders,setBigOrders]=useState([]);
     const GetBigOrders=async()=>{
-        const res=await axios.get('http://localhost:4800/FindBigOrders');
+        const res=await axios.get('https://mali-vegitable-s-3.onrender.com/FindBigOrders');
         setBigOrders(res.data);
     }
     const [AssignBigOrders,setAssignBigOrders]=useState([]);
     const GetAssignBigOrders=async()=>{
-        const res=await axios.get('http://localhost:4800/FindAssignedBigOrders');
+        const res=await axios.get('https://mali-vegitable-s-3.onrender.com/FindAssignedBigOrders');
         setAssignBigOrders(res.data);
     }
     const [CompletedBigWork,setCompletedBigWork]=useState([]);
   const GetCompletedWork=async()=>{
-    const res=await axios.get('http://localhost:4800/FindCompletedBigOrder');
+    const res=await axios.get('https://mali-vegitable-s-3.onrender.com/FindCompletedBigOrder');
     setCompletedBigWork(res.data);
   }
     useEffect(()=>{

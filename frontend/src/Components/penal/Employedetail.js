@@ -30,7 +30,7 @@ const Employedetail = () => {
   }
   const AddEmployee = async (e) => {
     e.preventDefault();
-    const res = await axios.post('http://localhost:4800/AdminRegistration', Employee);
+    const res = await axios.post('https://mali-vegitable-s-3.onrender.com/AdminRegistration', Employee);
     toast.success(res.data);
     setEmployee({
       UserName: "",
@@ -50,7 +50,7 @@ const Employedetail = () => {
   //Get the Employees
   const [EmployeData, setEmployeData] = useState([]);
   const GetEmployeData = async () => {
-    const res = await axios.get('http://localhost:4800/FindEmployee');
+    const res = await axios.get('https://mali-vegitable-s-3.onrender.com/FindEmployee');
 
     setEmployeData(res.data);
   }

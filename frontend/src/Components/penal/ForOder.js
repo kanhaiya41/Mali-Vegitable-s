@@ -11,7 +11,7 @@ const ForOder = () => {
   const [VegData, setVegData] = useState({});
   const GetData = async () => {
     try {
-      const res = await axios.get(`http://localhost:4800/GetOrderVeg/${id}`);
+      const res = await axios.get(`https://mali-vegitable-s-3.onrender.com/GetOrderVeg/${id}`);
       setVegData(res?.data);
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -35,7 +35,7 @@ const ForOder = () => {
       EcjectAddress: EcjectAdd,
       Bill: qua * VegData.Rate
     };
-    const res = await axios.post('http://localhost:4800/TakeOrder', OrderData);
+    const res = await axios.post('https://mali-vegitable-s-3.onrender.com/TakeOrder', OrderData);
     toast.success(res?.data);
     navigate('/Order');
   }

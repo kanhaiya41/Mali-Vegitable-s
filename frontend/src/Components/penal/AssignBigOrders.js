@@ -9,7 +9,7 @@ const AssignBigOrders = () => {
   const { UserName } = location.state;
   const [BigOrders, setBigOrders] = useState([]);
   const GetBigOrders = async () => {
-    const res = await axios.get('http://localhost:4800/FindBigOrders');
+    const res = await axios.get('https://mali-vegitable-s-3.onrender.com/FindBigOrders');
     setBigOrders(res.data);
   }
   useEffect(() => {
@@ -22,7 +22,7 @@ const AssignBigOrders = () => {
     )
   }
   const AssignNow = async () => {
-    const res = await axios.post('http://localhost:4800/FindBigOrderforAssign', {
+    const res = await axios.post('https://mali-vegitable-s-3.onrender.com/FindBigOrderforAssign', {
       ids: idDats
     })
     const workDataArray = res.data;
@@ -44,7 +44,7 @@ const AssignBigOrders = () => {
         Assign: "Assigned"
       }
     });
-    const response = await axios.post('http://localhost:4800/AssignbigOrderNow', assignWorkArray);
+    const response = await axios.post('https://mali-vegitable-s-3.onrender.com/AssignbigOrderNow', assignWorkArray);
     toast.success(response.data);
     Navigate('/WorkAssign');
   }
